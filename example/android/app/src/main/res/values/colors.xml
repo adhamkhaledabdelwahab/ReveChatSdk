@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Add primary and primary Dark in your color.xml, if already not defined: -->
+    <color name="revechatsdk_colorPrimary">#1E3D83</color>
+    <color name="revechatsdk_colorPrimaryDark">#1E3D83</color>
+
+    <!--  screen background color -->
+<!--    <color name="revechatsdk_layout_bg">#1E3D83</color>-->
+
+    <!--  Button color -->
+<!--    <color name="revechatsdk_btn_text">#YourColor</color>-->
+<!--    <color name="revechatsdk_btn_bg">@color/revechatsdk_colorPrimary</color>-->
+
+    <!--  Chat screen colors -->
+<!--    <color name="revechatsdk_color_chat_background">#YourColor</color>-->
+<!--    <color name="revechatsdk_color_sending_msg_bg">#YourColor</color>-->
+<!--    <color name="revechatsdk_color_receiving_msg_bg">#YourColor</color>-->
+<!--    <color name="revechatsdk_shape_date_bubble_bg">#YourColor</color>-->
+</resources>
