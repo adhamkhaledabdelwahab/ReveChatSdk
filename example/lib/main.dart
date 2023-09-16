@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'dart:async';
 
@@ -9,7 +11,9 @@ final reveChatSdkPlugin = ReveChatSdk();
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await reveChatSdkPlugin.initReveChat("6431897");
-  await reveChatSdkPlugin.setReveChatDeviceToken("deviceToken");
+  if(Platform.isAndroid){
+    await reveChatSdkPlugin.setReveChatDeviceToken("deviceToken");
+  }
   await reveChatSdkPlugin.setReveChatVisitorInfo(
     UserModel(
       name: "Magdsoft Testing",
