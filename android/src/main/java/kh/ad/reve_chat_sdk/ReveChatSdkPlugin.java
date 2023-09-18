@@ -6,18 +6,18 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
-import io.flutter.embedding.engine.plugins.FlutterPlugin;
-import io.flutter.plugin.common.MethodCall;
-import io.flutter.plugin.common.MethodChannel;
-import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
-import io.flutter.plugin.common.MethodChannel.Result;
-
 import com.revesoft.revechatsdk.model.VisitorInfo;
 import com.revesoft.revechatsdk.state.LoginState;
 import com.revesoft.revechatsdk.ui.activity.ReveChatActivity;
 import com.revesoft.revechatsdk.utils.ReveChat;
 
 import java.util.HashMap;
+
+import io.flutter.embedding.engine.plugins.FlutterPlugin;
+import io.flutter.plugin.common.MethodCall;
+import io.flutter.plugin.common.MethodChannel;
+import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
+import io.flutter.plugin.common.MethodChannel.Result;
 
 /**
  * ReveChatSdkPlugin
