@@ -13,11 +13,21 @@ and user data to start chat with registered technical support.
 About chat colors all can be customized from ReveChat Dashboard
 
 ## Android 
-* manifest.xml file => add <uses-permission android:name="android.permission.INTERNET"/>
-* strings.xml file => add <string name="revechatsdk_title_chat_window">specified title</string>
+* manifest.xml file => add
+  ```txt
+      <uses-permission android:name="android.permission.INTERNET"/>
+  ```
+* strings.xml file => add 
+    ```txt
+        <string name="revechatsdk_title_chat_window">specified title</string>
+    ```
 * colors.xml file => add for ReveChat screen primary
-    * <color name="revechatsdk_colorPrimary">color in hex</color>
-    * <color name="revechatsdk_colorPrimaryDark">color in hex</color>
+    * ```txt
+        <color name="revechatsdk_colorPrimary">color in hex</color>
+      ```
+    * ```txt
+        <color name="revechatsdk_colorPrimaryDark">color in hex</color>
+      ```
 
 ## IOS
 * min ios: 11
