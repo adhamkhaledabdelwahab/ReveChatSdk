@@ -1,15 +1,120 @@
 # reve_chat_sdk
 
-A new Flutter project.
+ReveChatSDK
 
 ## Getting Started
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+this plugin is for android and ios devices, it registers app to ReveChat bot with your account id 
+which can be found at ReveChat dashboard at integrate mobile sdk, so by setting account id 
+and user data to start chat with registered technical support.
 
-For help getting started with Flutter development, view the
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Setup
 
+About chat colors all can be customized from ReveChat Dashboard
+
+## Android 
+* manifest.xml file => add <uses-permission android:name="android.permission.INTERNET"/>
+* strings.xml file => add <string name="revechatsdk_title_chat_window">specified title</string>
+* colors.xml file => add for ReveChat screen primary
+    * <color name="revechatsdk_colorPrimary">color in hex</color>
+    * <color name="revechatsdk_colorPrimaryDark">color in hex</color>
+
+## IOS
+* min ios: 11
+* pod file => add 
+    source 'https://github.com/CocoaPods/Specs.git' in case of error in cdn
+* pod file => add
+  use_frameworks!
+  project 'Runner', {
+  'Debug' => :debug,
+  'Profile' => :release,
+  'Release' => :release,
+  }
+* info.plist => add
+```plist
+  <key>NSPhotoLibraryUsageDescription</key>
+  <string>description to use photo library</string>
+  <key>NSCameraUsageDescription</key>
+  <string>description to use camera</string>
+  <key>NSAppTransportSecurity</key>        <dict>
+  <key>NSAllowsArbitraryLoads</key>
+  <true/></dict>
+  <key>NSMicrophoneUsageDescription</key>
+  <string>Add your description here</string>
+  <key>NSCameraUsageDescription</key>
+  <string>Add your description here</string>
+```
+* AppDelegate.swift => add
+```swift
+    import UIKit
+    import Flutter
+
+    @UIApplicationMain
+    @objc class AppDelegate: FlutterAppDelegate {
+    var backgroundUpdateTask: UIBackgroundTaskIdentifier = UIBackgroundTaskIdentifier(rawValue: 0)
+    
+    override func application(
+    _ application: UIApplication,
+    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+    ) -> Bool {
+        GeneratedPluginRegistrant.register(with: self)
+        let navC = UINavigationController(rootViewController: window.rootViewController!)
+        navC.isNavigationBarHidden = true
+        window.rootViewController = navC
+        window.makeKeyAndVisible()
+    return super.application(application, didFinishLaunchingWithOptions: launchOptions)
+    }
+    
+        override func applicationDidBecomeActive(_ application: UIApplication) {
+            application.applicationIconBadgeNumber = 0
+            self.endBackgroundUpdateTask()
+        }
+        
+        override func applicationWillResignActive(_ application: UIApplication) {
+            self.backgroundUpdateTask = UIApplication.shared.beginBackgroundTask(expirationHandler: {
+            self.endBackgroundUpdateTask()
+            })
+        }
+        
+        func endBackgroundUpdateTask() {
+            UIApplication.shared.endBackgroundTask(self.backgroundUpdateTask)
+            self.backgroundUpdateTask = UIBackgroundTaskIdentifier.invalid
+        }
+    }
+```
+
+Add the plugin into pubspec.yaml
+
+Initialize the plugin in the main function as following:
+
+```dart
+    import 'package:reve_chat_sdk/reve_chat_sdk.dart';
+    import 'package:reve_chat_sdk/user_model.dart';
+    
+    final reveChatSdkPlugin = ReveChatSdk();
+    
+    Future<void> main() async {
+      WidgetsFlutterBinding.ensureInitialized();
+      await reveChatSdkPlugin.initReveChat(accountId);
+      if(Platform.isAndroid){
+        await reveChatSdkPlugin.setReveChatDeviceToken(deviceToken);
+      }
+      await reveChatSdkPlugin.setReveChatVisitorInfo(
+        UserModel(
+          name: username,
+          email: userEmailAddress,
+          phoneNumber: userPhoneNumber,
+        ),
+      );
+      runApp(const MyApp());
+    }
+```
+
+## How to use plugin?
+
+all you can do to start chatting is to call this function in onPress of button
+
+```dart
+    final reveChatSdkPlugin = ReveChatSdk();
+    void chat() => reveChatSdkPlugin.gotoReveChat();
+```
