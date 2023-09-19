@@ -31,7 +31,7 @@ About chat colors all can be customized from ReveChat Dashboard
   'Release' => :release,
   }
 * info.plist => add
-```plist
+```txt
   <key>NSPhotoLibraryUsageDescription</key>
   <string>description to use photo library</string>
   <key>NSCameraUsageDescription</key>
