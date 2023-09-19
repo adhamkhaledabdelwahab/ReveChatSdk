@@ -48,7 +48,7 @@ About chat colors all can be customized from ReveChat Dashboard
   <key>NSCameraUsageDescription</key>
   <string>Add your description here</string>
 ```
-* AppDelegate.swift => add
+* AppDelegate.swift => add for background notification
 ```swift
     import UIKit
     import Flutter
