@@ -10,15 +10,15 @@ final reveChatSdkPlugin = ReveChatSdk();
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await reveChatSdkPlugin.initReveChat("6431897");
+  await reveChatSdkPlugin.initReveChat("accountId");
   if(Platform.isAndroid){
     await reveChatSdkPlugin.setReveChatDeviceToken("deviceToken");
   }
   await reveChatSdkPlugin.setReveChatVisitorInfo(
     UserModel(
-      name: "Magdsoft Testing",
-      email: "magdsoft@test.com",
-      phoneNumber: "+201234567891",
+      name: "username",
+      email: "emailAddress",
+      phoneNumber: "phoneNumber",
     ),
   );
   runApp(const MyApp());
