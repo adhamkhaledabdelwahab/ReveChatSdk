@@ -12,6 +12,8 @@ and user data to start chat with registered technical support.
 
 About chat colors all can be customized from ReveChat Dashboard
 
+ReveChat => https://www.revechat.com
+
 ## Android 
 * manifest.xml file => add
   ```txt
