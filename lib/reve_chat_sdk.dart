@@ -39,6 +39,8 @@ class ReveChatSdk {
   /// device token can be found from firebase getToken() method
   ///
   /// throws exceptions if error happens
+  ///
+  ///  only for android
   Future<String?> setReveChatDeviceToken(String deviceToken) async {
     try {
       return await ReveChatSdkPlatform.instance.setReveChatDeviceToken(
