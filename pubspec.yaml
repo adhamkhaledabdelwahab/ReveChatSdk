@@ -1,7 +1,7 @@
 name: reve_chat_sdk
 description: ReveChat SDK for chat bot support can be added for android and ios platforms
 version: 1.0.0
-homepage: https://github.com/adhamkhaledabdelwahab/ReveChatSdk.git
+homepage: https://github.com/adhamkhaledabdelwahab/ReveChatSdk
 
 environment:
   sdk: '>=3.0.6 <4.0.0'
