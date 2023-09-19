@@ -23,16 +23,16 @@ About chat colors all can be customized from ReveChat Dashboard
 * min ios: 11
 * pod file => add
     ```txt
-    source 'https://github.com/CocoaPods/Specs.git'
+       source 'https://github.com/CocoaPods/Specs.git'
     ``` in case of error in cdn
 * pod file => add
   ```txt
-  use_frameworks!
-  project 'Runner', {
-  'Debug' => :debug,
-  'Profile' => :release,
-  'Release' => :release,
-  }
+     use_frameworks!
+     project 'Runner', {
+     'Debug' => :debug,
+     'Profile' => :release,
+     'Release' => :release,
+     }
   ```
 * info.plist => add
 ```txt
