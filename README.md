@@ -14,7 +14,7 @@ About chat colors all can be customized from ReveChat Dashboard
 
 ReveChat => https://www.revechat.com
 
-## Android 
+## Android SETUP
 * manifest.xml file => add
   ```txt
       <uses-permission android:name="android.permission.INTERNET"/>
@@ -31,7 +31,7 @@ ReveChat => https://www.revechat.com
         <color name="revechatsdk_colorPrimaryDark">color in hex</color>
       ```
 
-## IOS
+## IOS SETUP
 * min ios: 11
 * pod file => add in case of error in cdn
     ```txt
@@ -60,6 +60,20 @@ ReveChat => https://www.revechat.com
   <key>NSCameraUsageDescription</key>
   <string>Add your description here</string>
 ```
+* IOS SETUP => AppDelegate.swift :
+```swift
+  override func application(
+    _ application: UIApplication,
+      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+    ) -> Bool {
+    GeneratedPluginRegistrant.register(with: self)
+    let navC = UINavigationController(rootViewController: window.rootViewController!)
+    navC.isNavigationBarHidden = true
+    window.rootViewController = navC
+    window.makeKeyAndVisible()
+    return super.application(application, didFinishLaunchingWithOptions: launchOptions)
+  }
+```
 * AppDelegate.swift => add for background notification
 ```swift
     import UIKit
@@ -67,19 +81,7 @@ ReveChat => https://www.revechat.com
 
     @UIApplicationMain
     @objc class AppDelegate: FlutterAppDelegate {
-    var backgroundUpdateTask: UIBackgroundTaskIdentifier = UIBackgroundTaskIdentifier(rawValue: 0)
-    
-    override func application(
-    _ application: UIApplication,
-    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
-    ) -> Bool {
-        GeneratedPluginRegistrant.register(with: self)
-        let navC = UINavigationController(rootViewController: window.rootViewController!)
-        navC.isNavigationBarHidden = true
-        window.rootViewController = navC
-        window.makeKeyAndVisible()
-    return super.application(application, didFinishLaunchingWithOptions: launchOptions)
-    }
+        var backgroundUpdateTask: UIBackgroundTaskIdentifier = UIBackgroundTaskIdentifier(rawValue: 0)
     
         override func applicationDidBecomeActive(_ application: UIApplication) {
             application.applicationIconBadgeNumber = 0
@@ -134,3 +136,12 @@ all you can do to start chatting is to call this function in onPress of button
     final reveChatSdkPlugin = ReveChatSdk();
     void chat() => reveChatSdkPlugin.gotoReveChat();
 ```
+
+## FAQs (General issues faced while integrating)
+1. I am facing the following error in console
+   ld: library not found for -lAFNetworking
+   Reason : in your pod file use_frameworks! line is commented.
+   Solution : Uncomment use_frameworks! line and build again
+2. Getting Crash when initiating revechat sdk
+   reason : the pod has been updated on the cocoa pods
+   solution : run ‘pod update‘ in the terminal on your project path
