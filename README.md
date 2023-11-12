@@ -60,7 +60,7 @@ ReveChat => https://www.revechat.com
   <key>NSCameraUsageDescription</key>
   <string>Add your description here</string>
 ```
-* IOS SETUP => AppDelegate.swift :
+* AppDelegate.swift (Required):
 ```swift
   override func application(
     _ application: UIApplication,
