@@ -138,10 +138,10 @@ all you can do to start chatting is to call this function in onPress of button
 ```
 
 ## FAQs (General issues faced while integrating)
-1. I am facing the following error in console
-   ld: library not found for -lAFNetworking
-   Reason : in your pod file use_frameworks! line is commented.
+1. I am facing the following error in console \n
+   ld: library not found for -lAFNetworking \n
+   Reason : in your pod file use_frameworks! line is commented. \n
    Solution : Uncomment use_frameworks! line and build again
-2. Getting Crash when initiating revechat sdk
-   reason : the pod has been updated on the cocoa pods
+2. Getting Crash when initiating revechat sdk \n
+   reason : the pod has been updated on the cocoa pods \n
    solution : run ‘pod update‘ in the terminal on your project path
