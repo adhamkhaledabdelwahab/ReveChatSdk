@@ -21,7 +21,7 @@ PODS:
   - reve_chat_sdk (0.0.1):
     - Flutter
     - ReveChatSDK
-  - ReveChatSDK (2.2.7.3):
+  - ReveChatSDK (3.0.0):
     - AFNetworking
     - GoogleWebRTC
     - SocketRocket
@@ -53,7 +53,7 @@ SPEC CHECKSUMS:
   GoogleWebRTC: 4d261187b30512efdb711d21fa961a6adf138717
   integration_test: 13825b8a9334a850581300559b8839134b124670
   reve_chat_sdk: d8580702f11d70638bf16cd7a39023e462fee755
-  ReveChatSDK: 8cc3933ca292bd677234d695b6695887ea5c9a56
+  ReveChatSDK: c521a1c7b4094a9aec734ab2bf1c64f236fe30e0
   SocketRocket: abac6f5de4d4d62d24e11868d7a2f427e0ef940d
 
 PODFILE CHECKSUM: 999b67ef850c809192d75cbe3c1540c3c5c89b4b
