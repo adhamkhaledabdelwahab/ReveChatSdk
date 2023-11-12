@@ -8,3 +8,8 @@
 
 * update readme
   * update readme file
+## 1.0.2
+
+* update readme
+  * update readme file
+* solving some issues in ios
